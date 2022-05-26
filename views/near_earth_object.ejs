@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body{
+    background-color: #112B3C;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+  
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+html{
+    height: 100%;
+    overflow: hidden;
+}
+
+#background{
+    background-color: #F66B0E;
+    color: black;
+    width: 100%;
+    height: 50%;
+}
+#weather-symobol{
+    height: 20%;
+}
+
+#response{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 40%;
+    width: 100%;
+}
+#information{
+    display: flex;
+    flex-direction: row;
+}
+#location{
+    margin: 10px;
+    padding: 5px;
+}
+.mainform{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 75%;
+}
+div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#form{
+    width: 100%;
+}
+
+
+    </style>
+    <title>Near Earth Object</title>
+</head>
+<body>
+    <div>
+        <div className="mainform">
+
+          <div id="response">
+
+            <div id="background">
+         
+              <div id="information">
+                <div>Neo 1km Score:   <%=scout.object.neo1kmScore%><br>
+                <p>Score for object being larger than 1km </p>
+                </div>
+                <div>Neo Score: <%=scout.object.neoScore %><br>
+                    <p>Score for object a NEO out of 1-100</p></div>
+                <div>Impact Rating: <%=scout.object.rating %><br>
+                    <p>Chance of impact,5 being the most likely with a status of elevated</p></div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
