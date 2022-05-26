@@ -1,3 +1,4 @@
+//import required packages 
 import fetch from "node-fetch";
 import express from "express";
 import path from 'path';
@@ -25,8 +26,12 @@ app.get('/home', (req, res)=>{
 
    res.sendFile(__dirname+'/public/index.html')
 })
+
+//POST request that will be called on button click in index.html form
 app.post('/get_scoutid',async (req,res)=>{
     let id=req.body.id;
+   
+   //fetching of API data
        await fetch(
           `https://ssd-api.jpl.nasa.gov/scout.api?tdes=${id}&eph-start=now`
         )
@@ -38,10 +43,12 @@ app.post('/get_scoutid',async (req,res)=>{
     res.redirect('/view_scoutid')
 })
 
+//get request that will render near_earth_object.ejs file and pass json data from Scout API to form
 app.get('/view_scoutid',(req,res)=>{
     res.render(__dirname+'/views/near_earth_object.ejs',{scout:scout})
 })
 
+//Launching of localhost server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/home`);
 });
