@@ -6,3 +6,4 @@ Focus was placed on backend intergration with API.
 
 Step 1: Launch App.js
 Step 2: run "npm install" in directory in order to install dependencies 
+Step 3: Interact
